@@ -1,3 +1,11 @@
+# Wave's Note here
+
+this b(u)ypass was made by bypassi not me 
+its hosted [here](https://projecthive.fr.to/buypass/buy.html)
+
+the rest of this below is just bypassi's stuff
+
+
 # The Buypass
 
   **WARNING: This is a mid bypass. If you don't like it, cope.**
