@@ -17,38 +17,87 @@ fi
 sleep 1
 
 
-echo "What deployable would you like to make"
-echo "I for Interstellar"
-echo "A for Astroid"
-read -p "> " forktype
+exxc() {
+    echo "What deployable would you like to make"
+    echo "I for Interstellar"
+    echo "X for the wip method by bubbo"
+    echo "T for manual input"
+    read -p "> " forktype
 
-case $forktype in 
-    i | I) 
-        forktype="https://github.com/InterstellarNetwork/Interstellar"
-        name="Interstellar"
-    ;;
-    a | A) 
-        forktype="https://github.com/VyperGroup/astroidv3"
-        name="astroidv3"
-    ;;
-esac
-
-read -p "Link to your repo you want to overwrite> " yourrepo
-echo "This will take a minute depends on your WiFi speed"
-sleep 2
-echo
-echo "----"
-echo "Cloning"
-echo "----"
-echo
-git clone --bare $forktype.git
-cd $name.git
-echo
-echo "----"
-echo "Pushing"
-echo "----"
-echo
-git push --mirror $yourrepo.git
-cd -
-echo "Done!"
-rm -rf $name.git
+    case $forktype in 
+        i | I) 
+            forktype="https://github.com/InterstellarNetwork/Interstellar"
+            name="Interstellar"
+            read -p "Link to your repo you want to overwrite> " yourrepo
+            echo "This will take a minute depends on your WiFi speed"
+            sleep 2
+            echo
+            echo "----"
+            echo "Cloning"
+            echo "----"
+            echo
+            git clone --bare $forktype.git
+            cd $name.git
+            echo
+            echo "----"
+            echo "Pushing"
+            echo "----"
+            echo
+            git push --mirror $yourrepo.git
+            cd -
+            echo "Done!"
+            rm -rf $name.git
+        ;;
+        t | T) 
+            echo "Input the github link to mirror"
+            read -p "> " forktype
+            read -p "Link to your repo you want to overwrite> " yourrepo
+            echo "This will take a minute depends on your WiFi speed"
+            sleep 2
+            echo
+            echo "----"
+            echo "Cloning"
+            echo "----"
+            echo
+            git clone --bare $forktype.git
+            cd $name.git
+            echo
+            echo "----"
+            echo "Pushing"
+            echo "----"
+            echo
+            git push --mirror $yourrepo.git
+            cd -
+            echo "Done!"
+            rm -rf $name.git
+        ;;
+        x | X) 
+            forktype="https://github.com/ypxa/x/"
+            name="x"
+            read -p "Link to your repo you want to overwrite> " yourrepo
+            echo "This will take a minute depends on your WiFi speed"
+            sleep 2
+            echo
+            echo "----"
+            echo "Cloning"
+            echo "----"
+            echo
+            git clone --bare $forktype.git
+            cd $name.git
+            echo
+            echo "----"
+            echo "Pushing"
+            echo "----"
+            echo
+            git push --mirror $yourrepo.git
+            cd -
+            echo "Done!"
+            rm -rf $name.git
+        ;;
+        *) 
+            clear
+            exxc
+        ;;
+    esac
+}
+exxc
