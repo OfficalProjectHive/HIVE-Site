@@ -23,13 +23,5 @@ function openHome() {
 }
 
 function openTesting() {
-    var page = new ABC({
-        "type": "blank",
-        "url": "https://projecthive.fr.to/subpages/loader.html"
-    })
-    page.setType("blank")
-    page.setUrl("https://projecthive.fr.to/subpages/loader.html")
-    console.log(page.getCode())
-    page.open()
-    window.close
+    location.href = "https://projecthive.fr.to/subpages/loader.html"
 }
